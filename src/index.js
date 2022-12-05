@@ -28,7 +28,7 @@ pagesJson.map(value => ({value, sort: Math.random()}))
         SCRIPT += `l = document.createElement('a');`;
         SCRIPT += `l.className = 'pageref-link';`;
         SCRIPT += `l.href = "${ pageUrl.href || '#' }";`;
-        SCRIPT += `l.innerText = "${ (page.name || page.title) || pageUrl.hostname }";`
+        SCRIPT += `l.innerText = " ${ (page.name || page.title) || pageUrl.hostname } ";`
         SCRIPT += `l.target = "${ page.target || '_blank' }";`
         SCRIPT += `c.append(l);`;
 
