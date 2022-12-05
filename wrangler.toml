@@ -1,0 +1,6 @@
+name = "pageref"
+main = "src/index.js"
+compatibility_date = "2022-12-05"
+
+[vars]
+pages = "mineskin.org, minerender.org, spiget.org"
