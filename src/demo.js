@@ -6,7 +6,7 @@ export const DEMO = `
 
 <div class="pageref"></div>
 
-<script src="./script.js?max=3"></script>
+<script src="./script.js?max=5"></script>
 </body>
 </html>
 `;

@@ -19,7 +19,7 @@ export default {
     async fetch(request, env, ctx) {
         let url = new URL(request.url);
         if (url.pathname === "/script.js" || url.pathname === "/pages.js") {
-            let max = parseInt(url.searchParams.get("max")) || 5;
+            let max = parseInt(url.searchParams.get("max")) || 3;
             let container = url.searchParams.get('container') || '.pageref';
             let script = SCRIPT
                 .replace('%%max%%', '' + max)
