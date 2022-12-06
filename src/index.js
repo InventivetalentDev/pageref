@@ -2,16 +2,16 @@ import { DEMO } from "./demo";
 import { SCRIPT } from "./script";
 import { PAGES } from "./pages";
 
-const pagesJson = PAGES; //TODO: variable
+const DEFAULT_WEIGHT = 0.5;
 
-const totalWeight = pagesJson.map(p => p.weight || 1).reduce((s, p) => s + p, 0);
+const pagesJson = PAGES; //TODO: variable
 
 let pageArray = pagesJson.map(value => ({value, sort: Math.random()}))
     .sort((a, b) => a.sort - b.sort)
     .map(({value}) => value)
     .map(page => {
         let pageUrl = new URL(page.href);
-        return [`${ pageUrl.href || '#' }`, ` ${ (page.name || page.title) || pageUrl.hostname } `, `${ page.target || '_blank' }`, page.weight || 1];
+        return [page.weight || DEFAULT_WEIGHT, `${ pageUrl.href || '#' }`, ` ${ (page.name || page.title) || pageUrl.hostname } `, `${ page.target || '_blank' }`];
     });
 
 
@@ -24,7 +24,6 @@ export default {
             let script = SCRIPT
                 .replace('%%max%%', '' + max)
                 .replace('%%container%%', container)
-                .replace('%%totalWeight%%', '' + totalWeight)
                 .replace('%%pageArray%%', JSON.stringify(pageArray))
                 .replace(/\n/g, '');
             return new Response(script, {
