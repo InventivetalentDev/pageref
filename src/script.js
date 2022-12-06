@@ -1,9 +1,9 @@
 export const SCRIPT = `((d) => {
 const c = d.querySelector('%%container%%');
 if (!c) return;
+
 let ls = %%pageArray%%;
 let mx = %%max%%;
-let i = 0;
 
 function ml(w,h,n,t) {
     let l = document.createElement('a');
@@ -16,13 +16,21 @@ function ml(w,h,n,t) {
     return l;
 }
 
-ls
-.map(p=>ml.apply(this, p))
-.sort((a, b) => a.s - b.s)
-.forEach(l => {
-    if(Math.random()>l.w) return;
-    if(i++>=mx) return;
-    c.append(l);
-});
+function r() {
+    c.innerText = '';
+    let i = 0;
+    ls
+    .map(p=>ml.apply(this, p))
+    .sort((a, b) => a.s - b.s)
+    .forEach(l => {
+        if(Math.random()>l.w) return;
+        if(i++>=mx) return;
+        c.append(l);
+    });
+}
+
+r();
+
+c.addEventListener('click',()=>r());
 
 })(document);`
