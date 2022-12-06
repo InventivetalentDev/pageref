@@ -1,17 +1,8 @@
 import { DEMO } from "./demo";
 import { SCRIPT } from "./script";
+import { PAGES } from "./pages";
 
-const pagesJson = [
-    {
-        "href": "https://mineskin.org"
-    },
-    {
-        "href": "https://spiget.org"
-    },
-    {
-        "href": "https://mcasset.cloud"
-    }
-];
+const pagesJson = PAGES; //TODO: variable
 
 const totalWeight = pagesJson.map(p => p.weight || 1).reduce((s, p) => s + p, 0);
 
