@@ -4,12 +4,12 @@ import { SCRIPT } from "./script";
 const DEFAULT_WEIGHT = 0.5;
 
 async function getConfig(env) {
-    let conf = await env.CACHE.get('config');
+    let conf = await env.CACHE.get('pageref-config');
     if (conf) {
         return JSON.parse(conf);
     }
     conf = await fetch(env.CONFIG).then(res => res.json())
-    await env.CACHE.put('config', JSON.stringify(conf), {expirationTtl: 10 * 60});
+    await env.CACHE.put('pageref-config', JSON.stringify(conf), {expirationTtl: 10 * 60});
     return conf;
 }
 
