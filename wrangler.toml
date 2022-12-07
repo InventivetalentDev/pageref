@@ -1,6 +1,10 @@
 name = "pageref"
-main = "src/index.js"
+main = "src/worker.js"
 compatibility_date = "2022-12-05"
 
+kv_namespaces = [
+    { binding = "CACHE", id = "2192b718728a4398888a3d154d82bad5", preview_id = "95699150d4584c68aec3557514510310" }
+]
+
 [vars]
-pages = "mineskin.org, minerender.org, spiget.org"
+CONFIG = "https://gist.githubusercontent.com/InventivetalentDev/764e9746ee89d4140a559e0a2d782946/raw/bf6162285a126e0b50171c1f4857c2840cba603d/pageref.json"
