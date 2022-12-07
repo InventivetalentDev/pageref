@@ -9,6 +9,7 @@ function ml(w,h,n,t) {
     let l = document.createElement('a');
     l.className = 'pageref-link';
     l.href = h;
+    l.rel = 'external';
     l.innerText = n;
     l.target = t;
     l.w = w;
